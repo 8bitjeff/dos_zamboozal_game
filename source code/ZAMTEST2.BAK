@@ -1,0 +1,30 @@
+// movetext
+// move text to memory and back
+#include <conio.h>
+#include <dos.h>
+#define LEFT	26
+#define TOP	 7
+#define RIGHT	65
+#define BOT	20
+#define DESLEFT  1			//destination NW corner
+#define DESTOP   1
+#define NUMCOLORS 16
+
+void main(void)
+	{
+	int j;
+
+	textbackground(BLACK);			//clear  screen to black
+	clrscr();
+	window(LEFT,TOP,RIGHT,BOT);
+	textbackground(GREEN);			//window green
+	for (j=0;j<98;j++)			//display 98 words
+		{
+		textcolor(j % NUMCOLORS);	//change color every
+		cputs("WHEAT SOFTWARE");   	//print word
+		}
+	 delay (3000);
+
+	 movetext(LEFT,TOP,RIGHT,BOT,DESLEFT,DESTOP);
+	 getch()
+	 }
